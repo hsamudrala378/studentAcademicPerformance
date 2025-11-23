@@ -1,0 +1,188 @@
+.view-marks-container {
+    min-height: 100vh;
+    background: #f5f7fa;
+    padding: 20px;
+}
+
+.view-marks-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-size: 18px;
+    color: #666;
+}
+
+.view-marks-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.view-marks-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.view-marks-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+}
+
+.marks-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.marks-table thead {
+    background: #f8f9fa;
+}
+
+.marks-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.marks-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+}
+
+.marks-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.name-cell {
+    font-weight: 600;
+    color: #333;
+}
+
+.score-cell {
+    text-align: center;
+    font-weight: 500;
+}
+
+.total-cell {
+    font-weight: 700;
+    color: #667eea;
+    text-align: center;
+}
+
+.avg-cell {
+    font-weight: 700;
+    color: #764ba2;
+    text-align: center;
+}
+
+.grade-cell {
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.grade-a+ {
+    color: #10b981;
+}
+
+.grade-a {
+    color: #3b82f6;
+}
+
+.grade-b {
+    color: #8b5cf6;
+}
+
+.grade-c {
+    color: #f59e0b;
+}
+
+.grade-d {
+    color: #ef4444;
+}
+
+.grade-f {
+    color: #dc2626;
+}
+
+.remarks-cell {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.empty-state p {
+    color: #666;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .view-marks-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+
