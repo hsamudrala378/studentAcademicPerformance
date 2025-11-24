@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../api";
 import "./Dashboard.css";
@@ -11,11 +11,7 @@ function Dashboard() {
     const [editError, setEditError] = useState("");
     const navigate = useNavigate();
 
-    useEffect(() => {
-        loadStudents();
-    }, []);
-
-    const loadStudents = async () => {
+    const loadStudents = useCallback(async () => {
         try {
             const res = await API.get("/students");
             setStudents(res.data);
@@ -28,7 +24,11 @@ function Dashboard() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [navigate]);
+
+    useEffect(() => {
+        loadStudents();
+    }, [loadStudents]);
 
     const handleLogout = () => {
         localStorage.removeItem("token");

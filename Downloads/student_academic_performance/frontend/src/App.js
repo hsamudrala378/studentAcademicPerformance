@@ -32,13 +32,14 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />} />
-        <Route path="/add-student" element={isLoggedIn ? <AddStudent /> : <Navigate to="/login" />} />
-        <Route path="/add-marks" element={isLoggedIn ? <AddMarks /> : <Navigate to="/login" />} />
-        <Route path="/view-marks" element={isLoggedIn ? <ViewMarks /> : <Navigate to="/login" />} />
-        <Route path="*" element={<Navigate to={isLoggedIn ? "/dashboard" : "/login"} />} />
+        <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" replace />} />
+        <Route path="/add-student" element={isLoggedIn ? <AddStudent /> : <Navigate to="/login" replace />} />
+        <Route path="/add-marks" element={isLoggedIn ? <AddMarks /> : <Navigate to="/login" replace />} />
+        <Route path="/view-marks" element={isLoggedIn ? <ViewMarks /> : <Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to={isLoggedIn ? "/dashboard" : "/login"} replace />} />
       </Routes>
     </Router>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../api";
 import "./ViewMarks.css";
@@ -9,11 +9,7 @@ function ViewMarks() {
     const [filter, setFilter] = useState("");
     const navigate = useNavigate();
 
-    useEffect(() => {
-        loadStudents();
-    }, []);
-
-    const loadStudents = async () => {
+    const loadStudents = useCallback(async () => {
         try {
             const res = await API.get("/students");
             setStudents(res.data);
@@ -26,7 +22,11 @@ function ViewMarks() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [navigate]);
+
+    useEffect(() => {
+        loadStudents();
+    }, [loadStudents]);
 
     const calculateTotal = (student) => {
         const math = student.scores?.math || 0;
