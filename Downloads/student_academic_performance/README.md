@@ -37,8 +37,11 @@ A full-stack web application for managing student academic performance with auth
 ### 1. Clone the repository
 
 ```bash
-cd student_academic_performance
+git clone https://github.com/hsamudrala378/studentAcademicPerformance.git
+cd studentAcademicPerformance/Downloads/student_academic_performance
 ```
+
+**Note:** After cloning, navigate to the `Downloads/student_academic_performance` folder where the project files are located.
 
 ### 2. Backend Setup
 
@@ -47,15 +50,26 @@ cd backend
 npm install
 ```
 
-Create a `.env` file in the `backend` directory:
+Create a `.env` file in the `backend` directory by copying the example file:
+
+```bash
+# Copy the example file
+copy .env.example .env
+# On Linux/Mac: cp .env.example .env
+```
+
+Then edit the `.env` file with your actual values:
 
 ```env
-MONGODB_URI=mongodb://localhost:27017/student_performance
+MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/student_performance?retryWrites=true&w=majority
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 PORT=5000
 ```
 
-**Note:** If using MongoDB Atlas, replace `MONGODB_URI` with your Atlas connection string.
+**Note:** 
+- If using MongoDB Atlas, replace `MONGO_URI` with your Atlas connection string
+- Replace `username` and `password` with your MongoDB credentials
+- Replace `JWT_SECRET` with a secure random string
 
 ### 3. Frontend Setup
 
